@@ -18,18 +18,16 @@ const welcome = (req, res) => {
 app.get("/", welcome);
 app.get("/api/users", users.getUsers);
 app.get("/api/users/:id", users.getUserById);
+app.post("/api/users", users.postUser);
+app.put("/api/users/:id", validateUser, users.updateUser);
+app.delete("/api/users/:id", users.deleteUser);
+
 app.get("/api/movies", movieHandlers.getMovies);
 app.get("/api/movies/:id", movieHandlers.getMovieById);
-
 app.post("/api/movies", movieHandlers.postMovie);
-app.post("/api/users", users.postUser);
 app.post("/api/movies", validateMovie, movieHandlers.postMovie);
-
 app.put("/api/movies/:id", validateMovie, movieHandlers.updateMovie);
-app.put("/api/users/:id", validateUser, users.updateUser);
-
 app.delete("/api/movies/:id", movieHandlers.deleteMovie);
-app.delete("/api/users/:id", users.deleteUser);
 
 app.listen(port, (err) => {
     if (err) {

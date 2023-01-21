@@ -143,7 +143,5 @@ module.exports = {
     getMovieById,
     postMovie,
     updateMovie,
-    deleteMovie, // don't forget to export your function ;)
+    deleteMovie,
 };
-
-// in app.js

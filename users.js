@@ -18,6 +18,20 @@ const getUsers = (req, res) => {
             operator: "=",
         });
     }
+    if (req.query.firstname != null) {
+        where.push({
+            column: "firstname",
+            value: req.query.firstname,
+            operator: "=",
+        });
+    }
+    if (req.query.lastname != null) {
+        where.push({
+            column: "lastname",
+            value: req.query.lastname,
+            operator: "=",
+        });
+    }
 
     database
         .query(
