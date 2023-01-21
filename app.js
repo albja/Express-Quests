@@ -29,6 +29,7 @@ app.put("/api/movies/:id", validateMovie, movieHandlers.updateMovie);
 app.put("/api/users/:id", validateUser, users.updateUser);
 
 app.delete("/api/movies/:id", movieHandlers.deleteMovie);
+app.delete("/api/users/:id", users.deleteUser);
 
 app.listen(port, (err) => {
     if (err) {
