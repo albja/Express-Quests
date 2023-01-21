@@ -1,7 +1,5 @@
 const Joi = require("joi");
 
-//npm install joi for install package
-
 const movieSchema = Joi.object({
     title: Joi.string()
         .pattern(/^[a-zA-ZàáâèéêëïôöûùçÀÂÈÉÊËÏÔÛÙÇ '-]+$/)
